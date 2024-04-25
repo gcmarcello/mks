@@ -18,7 +18,7 @@ import { Role, Roles } from '@/decorators/roles.decorator';
 import { RolesGuard } from '@/guards/role.guard';
 
 @ApiTags('User')
-@Controller('movies')
+@Controller('user')
 export class UserController {
   constructor(private readonly usersService: UserService) {}
 

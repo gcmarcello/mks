@@ -8,11 +8,7 @@ const configService = new ConfigService();
 const AppDataSource = new DataSource({
   type: 'postgres',
   url: configService.get('DIRECT_URL'),
-  entities: [
-    './src/resources/genres/entities/genre.entity',
-    './src/resources/movies/entities/movie.entity',
-    './src/resources/user/entities/user.entity',
-  ],
+  entities: [__dirname + '/../**/*.entity.ts'],
   migrations: [`${__dirname}/src/database/migrations/**/*{.js,.ts}`],
   migrationsTableName: '_migrations',
 });
