@@ -14,7 +14,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Movie API')
-    .setDescription('MKS Backend Challenge Movie API')
+    .setDescription('MKS Backend Challenge Movie API - Marcello Coelho')
     .setVersion('1.0')
     .addTag('Auth')
     .addTag('Genres')
