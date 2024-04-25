@@ -11,8 +11,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         return {
           type: 'postgres',
           url: configService.get('DIRECT_URL'),
-          entities: [],
-          autoLoadEntities: true,
         };
       },
     }),
