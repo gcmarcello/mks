@@ -17,7 +17,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Role, Roles } from '@/decorators/roles.decorator';
 import { RolesGuard } from '@/guards/role.guard';
 
-@ApiTags('User')
+@ApiTags('Users')
 @Controller('user')
 export class UserController {
   constructor(private readonly usersService: UserService) {}
