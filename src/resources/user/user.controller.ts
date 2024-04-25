@@ -22,7 +22,6 @@ import { RolesGuard } from '@/guards/role.guard';
 export class UserController {
   constructor(private readonly usersService: UserService) {}
 
-  @ApiBearerAuth()
   @Post()
   create(@Body() createMovieDto: CreateUserDto) {
     return this.usersService.create(createMovieDto);
@@ -30,12 +29,16 @@ export class UserController {
 
   @ApiBearerAuth()
   @Get()
+  @Roles(Role.Admin)
+  @UseGuards(RolesGuard)
   findAll() {
     return this.usersService.findMany({});
   }
 
   @ApiBearerAuth()
   @Get(':id')
+  @Roles(Role.Self)
+  @UseGuards(RolesGuard)
   findOne(@Param('id', UuidValidationPipe) id: string) {
     return this.usersService.findOne({ where: { id } });
   }
